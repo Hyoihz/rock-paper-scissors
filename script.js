@@ -3,7 +3,14 @@ const getRandomNumber = (max) => {
 }
 
 const getPlayerChoice = () => {
-    return prompt("Enter choice (rock, paper, scissor)").toLowerCase()
+    let choice = prompt("Enter choice (rock, paper, scissors)").toLowerCase()
+
+    while (choice !== "rock" && choice !== "paper" && choice !== "scissors") {
+        choice = prompt(
+            "Invalid choice. Please enter rock, paper, or scissors"
+        ).toLowerCase()
+    }
+    return choice
 }
 
 const getComputerChoice = () => {
